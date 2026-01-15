@@ -1,6 +1,6 @@
-# How to initialize a Minecraft BDS project in a new folder to fine tune for deployment (argument is the folder name, and it is sanitized for container name):
-
-user@MACHINE:/volume2/System/Apps/MinecraftBedrock$ ./docker-project-initialize.sh --Server1-MyFirstWorld
+# How to initialize a Minecraft BDS project folder to fine tune for deployment:
+```
+user@MACHINE:/volume2/System/Apps/MinecraftBedrock$ ./docker-project-initialize.sh --Server1-MyFirstWorld   <- argument is the folder name, and it is sanitized for the container name
 Creating project folder: Server1-MyFirstWorld
 Creating project data folder: Server1-MyFirstWorld/data
 Setting project configuration variables...
@@ -9,9 +9,10 @@ user@MACHINE:/volume2/System/Apps/MinecraftBedrock$ ./docker-project-initialize.
 Creating project folder: The Other World
 Creating project data folder: The Other World/data
 Setting project configuration variables...
+```
 
 # How to deploy a Minecraft BDS container (new or existing):
-
+```
 user:MACHINE:/volume2/System/Apps/MinecraftBedrock$ ./docker-container-build.sh --MyFirstWorld
 Creating project folder: MyFirstWorld
 Creating project data folder: MyFirstWorld/data
@@ -31,9 +32,10 @@ Building container from current image...
  ✔ Container docker-minecraft-bds-myfirstworld  Running                                                                                            0.0s 
 Waiting for server to start...
 Initializing server...
+```
 
 # File structure:
-
+```
 /volume2/System/Apps/MinecraftBedrock/
 -rwxrwxrwx 1 user admin  200 Jan 14 08:40  docker-container-bash.sh
 -rwxrwxrwx 1 user admin  303 Jan 14 08:40  docker-container-build.sh
@@ -57,7 +59,7 @@ drwxrwxrwx 3 user admin 4096 Jan 15 00:18  MyFirstWorld                  <- init
 drwxrwxrwx 14 user admin 4096 Jan 15 00:18 data                          <- initialized
 -rwxrwxrwx  1 user admin 3857 Jan 15 00:18 docker-compose.yml            <- initialized (default values; customizable)
 -rwxrwxrwx  1 user admin  367 Jan 15 00:18 docker-project-config.sh      <- initialized (default values; customizable)
-
+```
 
 # Other scripts:
 ...
