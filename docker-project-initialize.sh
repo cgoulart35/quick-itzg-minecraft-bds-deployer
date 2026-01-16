@@ -10,7 +10,7 @@ echo "Setting project configuration variables..."
 
 CONFIG_SET=true
 
-SERVER_DIR="${SCRIPT_DIR}/${PROJECT_FOLDER_NAME}"
+SERVER_DIR="\$(cd "\$(dirname "\${BASH_SOURCE[0]}")" && pwd)"
 COMPOSE_FILE="\$SERVER_DIR/docker-compose.yml"
 PROJECT_NAME="docker-minecraft-bds-${PROJECT_FOLDER_NAME_SANITIZED}"
 
