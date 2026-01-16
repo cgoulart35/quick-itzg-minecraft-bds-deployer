@@ -1,6 +1,6 @@
 # quick-itzg-minecraft-bds-deployer scripts:
-- For all scripts, you will need to provide the --"Project Folder Name" argument. This is the name of the folder (in the servers directory) of where the Minecraft BDS configuration and Docker volume will live. Use double quotes when using spaces.
-- You can either choose to start a new server with default settings on-demand, or initialize a new one to tweak before deployment. For on-demand servers, the project folder name will be used for the world/level name, and sanitized to be used in the Docker container name.
+- For all scripts, you will need to provide the --"Project Folder Name" argument. This is the name of the folder (in the generated 'servers' directory) of where the Minecraft BDS configuration and Docker volume will live. Use double quotes when using spaces.
+- You can choose to either start a new server with default settings on-demand, or initialize a new one to tweak before deployment. For on-demand servers, the project folder name will be used for the world/level name, and sanitized to be used in the Docker container name.
 
 ### `docker-project-initialize.sh`
 **Description:** Run this script to create a new project folder with default settings; generates the docker-project-config.sh file, the docker-compose.yml file, and the data volume directory in the project folder. This script is automatically ran by the docker-container-build.sh below to generate new projects on-demand (if project does not exist already). You can use this script to initialize the project without deploying it incase you want to tweak settings first.
@@ -10,8 +10,6 @@
 ---
 ### `docker-container-build.sh`
 **Description:** Run this script to create the itzg BDS Docker image and deploy a container from the referenced project folder's docker-compose.yml file. After the container/server is started, the script also runs the docker-container-server-initialize.sh file below to initialize the server with any default configurations not configurable in the docker-compose.yml file (default custom game rules defined in docker-project-config.sh).
-**Usage:**
-
 ```bash
 ./docker-container-build.sh --"Project Folder Name"
 ```
