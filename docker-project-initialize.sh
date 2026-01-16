@@ -1,4 +1,8 @@
 generate_docker_project_config() {
+if [ -f "${PROJECT_FOLDER_NAME}/docker-project-config.sh" ]; then
+  return
+fi
+echo "Generating docker-project-config.sh..."
 cat << EOF > "${PROJECT_FOLDER_NAME}/docker-project-config.sh"
 echo "Setting project configuration variables..."
 
@@ -19,6 +23,10 @@ EOF
 }
 
 generate_docker_compose() {
+if [ -f "${PROJECT_FOLDER_NAME}/docker-compose.yml" ]; then
+  return
+fi
+echo "Generating docker-compose.yml..."
 cat << EOF > "${PROJECT_FOLDER_NAME}/docker-compose.yml"
 services:
   bds:
