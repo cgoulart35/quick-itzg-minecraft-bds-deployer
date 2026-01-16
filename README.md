@@ -1,5 +1,5 @@
 # quick-itzg-minecraft-bds-deployer scripts:
-- For all scripts, you will need to provide the --"Project Folder Name" argument. This is the name of the folder (in the same directory as the scripts) of where the Minecraft BDS configuration and Docker volume will live. Use double quotes when using spaces.
+- For all scripts, you will need to provide the --"Project Folder Name" argument. This is the name of the folder (in the servers directory) of where the Minecraft BDS configuration and Docker volume will live. Use double quotes when using spaces.
 - You can either choose to start a new server with default settings on-demand, or initialize a new one to tweak before deployment. For on-demand servers, the project folder name will be used for the world/level name, and sanitized to be used in the Docker container name.
 
 ### `docker-project-initialize.sh`
@@ -94,11 +94,15 @@
 user@MACHINE:/volume2/System/Apps/MinecraftBedrock$ ./docker-project-initialize.sh --Server1-MyFirstWorld   <- argument is the folder name, and it is sanitized for the container name
 Creating project folder: Server1-MyFirstWorld
 Creating project data folder: Server1-MyFirstWorld/data
+Generating docker-project-config.sh...
+Generating docker-compose.yml...
 Setting project configuration variables...
 
 user@MACHINE:/volume2/System/Apps/MinecraftBedrock$ ./docker-project-initialize.sh --"The Other World"
 Creating project folder: The Other World
 Creating project data folder: The Other World/data
+Generating docker-project-config.sh...
+Generating docker-compose.yml...
 Setting project configuration variables...
 ```
 
@@ -163,10 +167,10 @@ Initializing server...
 -rwxrwxrwx 1 user admin  196 Jan 14 08:41  docker-image-update.sh
 -rwxrwxrwx 1 user admin 5396 Jan 14 09:13  docker-project-initialize.sh
 -rwxrwxrwx 1 user admin 1069 Jan 15 00:03  LICENSE
-drwxrwxrwx 3 user admin 4096 Jan 15 00:18  MyFirstWorld                  <- initialized
+drwxrwxrwx 3 user admin 4096 Jan 15 00:18  servers                       <- initialized
 -rwxrwxrwx 1 user admin 1838 Jan 15 00:25  README.md
 
-/volume2/System/Apps/MinecraftBedrock/MyFirstWorld/                      <- initialized
+/volume2/System/Apps/MinecraftBedrock/servers/MyFirstWorld/              <- initialized
 drwxrwxrwx 14 user admin 4096 Jan 15 00:18 data                          <- initialized
 -rwxrwxrwx  1 user admin 3857 Jan 15 00:18 docker-compose.yml            <- initialized (default values; customizable)
 -rwxrwxrwx  1 user admin  367 Jan 15 00:18 docker-project-config.sh      <- initialized (default values; customizable)
