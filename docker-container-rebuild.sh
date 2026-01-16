@@ -1,6 +1,8 @@
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 if [[ "${CONFIG_SET:-false}" != "true" ]]; then
-  source docker-project-initialize.sh "$@"
+  source "${SCRIPT_DIR}/docker-project-initialize.sh" "$@"
 fi
 
-source docker-container-delete.sh && \
-source docker-container-build.sh
+source "${SCRIPT_DIR}/docker-container-delete.sh" && \
+source "${SCRIPT_DIR}/docker-container-build.sh"
