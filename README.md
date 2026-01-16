@@ -1,4 +1,4 @@
-# quick-itzg-minecraft-bds-deployer scripts:
+# quick-itzg-minecraft-bds-deployments scripts:
 - For all scripts, you will need to provide the --"Project Folder Name" argument. This is the name of the folder (in the generated 'servers' directory) of where the Minecraft BDS configuration and Docker volume will live. Use double quotes when using spaces.
 - You can choose to either start a new server with default settings on-demand, or initialize a new one to tweak before deployment. For on-demand servers, the project folder name will be used for the world/level name, and sanitized to be used in the Docker container name.
 
