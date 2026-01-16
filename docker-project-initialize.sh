@@ -1,11 +1,11 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 generate_docker_project_config() {
-if [ -f "${SCRIPT_DIR}/${PROJECT_FOLDER_NAME}/docker-project-config.sh" ]; then
+if [ -f "${SCRIPT_DIR}/servers/${PROJECT_FOLDER_NAME}/docker-project-config.sh" ]; then
   return
 fi
 echo "Generating docker-project-config.sh..."
-cat << EOF > "${SCRIPT_DIR}/${PROJECT_FOLDER_NAME}/docker-project-config.sh"
+cat << EOF > "${SCRIPT_DIR}/servers/${PROJECT_FOLDER_NAME}/docker-project-config.sh"
 echo "Setting project configuration variables..."
 
 CONFIG_SET=true
@@ -25,11 +25,11 @@ EOF
 }
 
 generate_docker_compose() {
-if [ -f "${SCRIPT_DIR}/${PROJECT_FOLDER_NAME}/docker-compose.yml" ]; then
+if [ -f "${SCRIPT_DIR}/servers/${PROJECT_FOLDER_NAME}/docker-compose.yml" ]; then
   return
 fi
 echo "Generating docker-compose.yml..."
-cat << EOF > "${SCRIPT_DIR}/${PROJECT_FOLDER_NAME}/docker-compose.yml"
+cat << EOF > "${SCRIPT_DIR}/servers/${PROJECT_FOLDER_NAME}/docker-compose.yml"
 services:
   bds:
     image: itzg/minecraft-bedrock-server
@@ -37,7 +37,7 @@ services:
     ports:
       - "19132:19132/udp"
     volumes:
-      - ${SCRIPT_DIR}/${PROJECT_FOLDER_NAME}/data:/data
+      - ${SCRIPT_DIR}/servers/${PROJECT_FOLDER_NAME}/data:/data
     restart: unless-stopped
     stdin_open: true
     tty: true
@@ -169,17 +169,17 @@ if [[ "${CONFIG_SET:-false}" != "true" ]]; then
   PROJECT_FOLDER_NAME_SANITIZED="${PROJECT_FOLDER_NAME_SANITIZED,,}"  # convert to lowercase
   
   # create user project if does not exist
-  if [[ ! -d "${SCRIPT_DIR}/${PROJECT_FOLDER_NAME}" ]]; then
+  if [[ ! -d "${SCRIPT_DIR}/servers/${PROJECT_FOLDER_NAME}" ]]; then
     echo "Creating project folder: $PROJECT_FOLDER_NAME"
-    mkdir -p "${SCRIPT_DIR}/${PROJECT_FOLDER_NAME}"
+    mkdir -p "${SCRIPT_DIR}/servers/${PROJECT_FOLDER_NAME}"
   else
     echo "Using existing project folder..."
   fi
 
   # create user project data folder for volume if does not exist
-  if [[ ! -d "${SCRIPT_DIR}/${PROJECT_FOLDER_NAME}/data" ]]; then
+  if [[ ! -d "${SCRIPT_DIR}/servers/${PROJECT_FOLDER_NAME}/data" ]]; then
     echo "Creating project data folder: ${PROJECT_FOLDER_NAME}/data"
-    mkdir -p "${SCRIPT_DIR}/${PROJECT_FOLDER_NAME}/data"
+    mkdir -p "${SCRIPT_DIR}/servers/${PROJECT_FOLDER_NAME}/data"
   fi
   
   # generate the project files if do not exist
@@ -187,6 +187,6 @@ if [[ "${CONFIG_SET:-false}" != "true" ]]; then
   generate_docker_compose
   
   # set project configuration variables
-  source "${SCRIPT_DIR}/${PROJECT_FOLDER_NAME}/docker-project-config.sh"
+  source "${SCRIPT_DIR}/servers/${PROJECT_FOLDER_NAME}/docker-project-config.sh"
   
 fi
