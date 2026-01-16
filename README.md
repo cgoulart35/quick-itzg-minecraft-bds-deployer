@@ -61,5 +61,91 @@ drwxrwxrwx 14 user admin 4096 Jan 15 00:18 data                          <- init
 -rwxrwxrwx  1 user admin  367 Jan 15 00:18 docker-project-config.sh      <- initialized (default values; customizable)
 ```
 
-# Other scripts:
-...
+# All scripts:
+
+### `docker-container-build.sh`
+**Description:** 
+**Usage:**
+
+```bash
+./docker-container-build.sh --"Project Folder Name"
+```
+---
+### `docker-container-delete.sh`
+**Description:** 
+```bash
+./docker-container-delete.sh --"Project Folder Name"
+```
+---
+### `docker-container-rebuild.sh`
+**Description:** 
+```bash
+./docker-container-rebuild.sh --"Project Folder Name"
+```
+---
+### `docker-project-initialize.sh`
+**Description:** 
+```bash
+./docker-project-initialize.sh --"Project Folder Name"
+```
+---
+### `docker-container-server-initialize.sh`
+**Description:** 
+```bash
+./docker-container-server-initialize.sh --"Project Folder Name"
+```
+---
+### `docker-container-update.sh`
+**Description:** 
+```bash
+./docker-container-update.sh --"Project Folder Name"
+```
+---
+### `docker-image-update.sh`
+**Description:** 
+```bash
+./docker-image-update.sh --"Project Folder Name"
+```
+---
+### `docker-container-stop.sh`
+**Description:** 
+```bash
+./docker-container-stop.sh --"Project Folder Name"
+```
+---
+### `docker-container-start.sh`
+**Description:** 
+```bash
+./docker-container-start.sh --"Project Folder Name"
+```
+---
+### `docker-container-restart.sh`
+**Description:** 
+```bash
+./docker-container-restart.sh --"Project Folder Name"
+```
+---
+### `docker-container-server-console.sh`
+**Description:** 
+```bash
+./docker-container-server-console.sh --"Project Folder Name"
+```
+---
+### `docker-container-bash.sh`
+**Description:** 
+```bash
+./docker-container-bash.sh --"Project Folder Name"
+```
+---
+### `docker-container-network-connect.sh`
+**Description:** 
+```bash
+./docker-container-network-connect.sh --"Project Folder Name"
+```
+---
+### `docker-container-network-disconnect.sh`
+**Description:** 
+```bash
+./docker-container-network-disconnect.sh --"Project Folder Name"
+```
+
