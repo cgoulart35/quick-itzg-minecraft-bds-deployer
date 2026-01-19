@@ -170,7 +170,7 @@ Initializing server...
 -rwxrwxrwx 1 user admin  153 Jan 14 08:41  docker-container-start.sh
 -rwxrwxrwx 1 user admin  152 Jan 14 08:41  docker-container-stop.sh
 -rwxrwxrwx 1 user admin  165 Jan 14 08:41  docker-container-update.sh
--rwxrwxrwx 1 user admin 196 Jan 14 08:41  docker-image-update.sh
+-rwxrwxrwx 1 user admin  196 Jan 14 08:41  docker-image-update.sh
 -rwxrwxrwx 1 user admin 5396 Jan 14 09:13  docker-project-initialize.sh
 -rwxrwxrwx 1 user admin 1069 Jan 15 00:03  LICENSE
 drwxrwxrwx 3 user admin 4096 Jan 15 00:18  servers                       <- initialized
