@@ -14,6 +14,12 @@
 ./docker-container-build.sh --"Project Folder Name"
 ```
 ---
+
+<details>
+<summary>Show other scripts (click to expand)</summary>
+
+---
+
 ### `docker-container-delete.sh`
 **Description:** Run this script to take down and delete the currently deployed container for the specifed project.
 ```bash
@@ -86,6 +92,8 @@
 ./docker-container-network-connect.sh --"Project Folder Name"
 ```
 ---
+
+</details>
 
 # How to initialize a Minecraft BDS project folder to fine tune for deployment:
 ```
@@ -162,7 +170,7 @@ Initializing server...
 -rwxrwxrwx 1 user admin  153 Jan 14 08:41  docker-container-start.sh
 -rwxrwxrwx 1 user admin  152 Jan 14 08:41  docker-container-stop.sh
 -rwxrwxrwx 1 user admin  165 Jan 14 08:41  docker-container-update.sh
--rwxrwxrwx 1 user admin  196 Jan 14 08:41  docker-image-update.sh
+-rwxrwxrwx 1 user admin 196 Jan 14 08:41  docker-image-update.sh
 -rwxrwxrwx 1 user admin 5396 Jan 14 09:13  docker-project-initialize.sh
 -rwxrwxrwx 1 user admin 1069 Jan 15 00:03  LICENSE
 drwxrwxrwx 3 user admin 4096 Jan 15 00:18  servers                       <- initialized
@@ -172,4 +180,3 @@ drwxrwxrwx 3 user admin 4096 Jan 15 00:18  servers                       <- init
 drwxrwxrwx 14 user admin 4096 Jan 15 00:18 data                          <- initialized
 -rwxrwxrwx  1 user admin 3857 Jan 15 00:18 docker-compose.yml            <- initialized (default values; customizable)
 -rwxrwxrwx  1 user admin  367 Jan 15 00:18 docker-project-config.sh      <- initialized (default values; customizable)
-```
