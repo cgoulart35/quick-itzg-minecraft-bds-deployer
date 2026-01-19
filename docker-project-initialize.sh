@@ -37,7 +37,7 @@ services:
     ports:
       - "19132:19132/udp"
     volumes:
-      - ${SCRIPT_DIR}/servers/${PROJECT_FOLDER_NAME}/data:/data
+      - ./data:/data
     restart: unless-stopped
     stdin_open: true
     tty: true
